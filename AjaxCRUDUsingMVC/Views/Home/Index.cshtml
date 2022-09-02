@@ -86,7 +86,7 @@
     // this is loading all database data in your page
 
  $(document).ready(function () {
-       loadData();                  //calling fun loaddate
+       loadData();                  //calling fun loaddata
     });
 
 
@@ -134,15 +134,16 @@
         if (res == false) {
             return false;
         }
-
+        
         var empObj = {
            
-            Id: $('#ID').val(),
-            Name: $('#Name').val(),
-            Email: $('#Email').val(),
-            Salary: $('#Salary').val(),
-            ManagerName: $('#ManagerName').val(),
-           TelephoneNumber: $('#TelephoneNumber').val()
+           
+            empid: $('#ID').val(),
+            empname: $('#Name').val(),
+            email: $('#Email').val(),
+            salary: $('#Salary').val(),
+            managername: $('#ManagerName').val(),
+           telephonenumber: $('#TelephoneNumber').val()
         };
 
       
@@ -207,12 +208,12 @@
             return false;
         }
         var empObj = {
-            Id: $('#ID').val(),
-            Name: $('#Name').val(),
-            Email: $('#Email').val(),
-            Salary: $('#Salary').val(),
-            ManagerName: $('#ManagerName').val(),
-            TelephoneNumber: $('#TelephoneNumber').val(),
+            empid: $('#ID').val(),
+            empname: $('#Name').val(),
+            email: $('#Email').val(),
+            salary: $('#Salary').val(),
+            managername: $('#ManagerName').val(),
+            telephonenumber: $('#TelephoneNumber').val(),
         };
         $.ajax({
             url: "/Home/Update",
@@ -245,11 +246,11 @@
     // this is for delete
 
 
-    function Delele(ID) {
+    function Delele(empid) {
         var ans = confirm("Are you sure you want to delete this Record?");
         if (ans) {
             $.ajax({
-                url: "/Home/Delete/" + ID,
+                url: "/Home/Delete/" + empid,
                 type: "POST",
                 contentType: "application/json;charset=UTF-8",
                 dataType: "json",

@@ -23,7 +23,7 @@ namespace AjaxCRUDUsingMVC.Controllers
             return Json(_context.empobj.ToList(), JsonRequestBehavior.AllowGet);
         }
         public JsonResult Add(Employee user)
-        {
+        { 
             _context.empobj.Add(user);
             _context.SaveChanges();
             return Json(JsonRequestBehavior.AllowGet);
